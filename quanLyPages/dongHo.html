@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đồng hồ</title>
+    <link rel="stylesheet" href="/CSS/stylesQuanLy.css">
+
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="../index.html">Trang chủ </a></li>
+            <li><a href="nguoiDung.html">Người dùng</a></li>
+            <li><a href="dongDongHo.html">Dòng đồng hồ</a></li>
+            <li><a href="dongHo.html">Đồng hồ</a></li>
+            <li><a href="sanPham.html">Sản phẩm</a></li>
+            <li><a href="donHang.html">Đơn hàng</a></li>  
+            <li><a href="maGiamGia.html">Mã giảm giá</a></li>
+            <li><a href="lichSuVanChuyen.html">Lịch sử vận chuyển</a></li> 
+            <li><a href="phuongThucThanhToan.html">Phương thức thanh toán</a></li>
+            <li><a href="donViVanChuyen.html">Đơn vị vận chuyển</a></li> <!-- Thêm mục mới vào sidebar -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Danh sách Đồng hồ</h1>
+            <button class="add-btn" onclick="openAddForm()">Thêm</button>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ảnh</th>
+                    <th>ID</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Loại đồng hồ</th>
+                    <th>Chất liệu case</th>
+                    <th>Chất liệu dây</th>
+                    <th>Màu dây</th>
+                    <th>Đường kính</th>
+                    <th>Độ dày mặt</th>
+                    <th>Chống nước</th>
+                    <th>Cấu tạo máy</th>
+                    <th>Màu mặt</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="images/dw.jpg" alt="Daniel Wellington" class="product-img"></td>
+                    <td>SP001</td>
+                    <td>Đồng hồ Daniel Wellington</td>
+                    <td>Classic</td>
+                    <td>Thép không gỉ</td>
+                    <td>Da</td>
+                    <td>Nâu</td>
+                    <td>40mm</td>
+                    <td>6mm</td>
+                    <td>3ATM</td>
+                    <td>Quartz</td>
+                    <td>Trắng</td>
+                    <td>
+                        <button class="edit-btn" onclick="openEditForm('SP001')">Sửa</button>
+                        <button class="delete-btn">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Form chỉnh sửa -->
+    <div class="edit-form" id="editForm">
+        <h3>Chỉnh sửa đồng hồ</h3>
+        <input type="text" id="editName" placeholder="Tên sản phẩm">
+        <input type="text" id="editMaterial" placeholder="Chất liệu case">
+        <input type="text" id="editStrap" placeholder="Chất liệu dây">
+        <input type="text" id="editColor" placeholder="Màu dây">
+        <input type="text" id="editSize" placeholder="Đường kính">
+        <button class="save-btn">Lưu</button>
+        <button class="close-btn" onclick="closeEditForm()">Đóng</button>
+    </div>
+
+    <!-- Form thêm mới -->
+    <div class="add-form" id="addForm">
+        <h3>Thêm đồng hồ mới</h3>
+        <input type="text" id="addName" placeholder="Tên sản phẩm">
+        <input type="text" id="addMaterial" placeholder="Chất liệu case">
+        <input type="text" id="addStrap" placeholder="Chất liệu dây">
+        <input type="text" id="addColor" placeholder="Màu dây">
+        <input type="text" id="addSize" placeholder="Đường kính">
+    
+        <!-- Danh sách thả xuống để chọn loại đồng hồ -->
+        <select id="addType">
+            <option value="Cơ">Cơ (Automatic)</option>
+            <option value="Quartz">Quartz (Pin)</option>
+            <option value="Digital">Digital (Điện tử)</option>
+            <option value="Thông minh">Thông minh (Smartwatch)</option>
+        </select>
+    
+        <button class="save-btn">Thêm</button>
+        <button class="close-btn" onclick="closeAddForm()">Đóng</button>
+    </div>
+    
+
+    <script>
+        function openEditForm(id) {
+            document.getElementById('editForm').style.display = 'block';
+        }
+        function closeEditForm() {
+            document.getElementById('editForm').style.display = 'none';
+        }
+        function openAddForm() {
+            document.getElementById('addForm').style.display = 'block';
+        }
+        function closeAddForm() {
+            document.getElementById('addForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

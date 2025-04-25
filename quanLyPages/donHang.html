@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đơn Hàng</title>
+    <link rel="stylesheet" href="/CSS/stylesQuanLy.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="../index.html">Trang chủ </a></li>
+            <li><a href="nguoiDung.html">Người dùng</a></li>
+            <li><a href="dongDongHo.html">Dòng đồng hồ</a></li>
+            <li><a href="dongHo.html">Đồng hồ</a></li>
+            <li><a href="sanPham.html">Sản phẩm</a></li>
+            <li><a href="donHang.html">Đơn hàng</a></li>  
+            <li><a href="maGiamGia.html">Mã giảm giá</a></li>
+            <li><a href="lichSuVanChuyen.html">Lịch sử vận chuyển</a></li> 
+            <li><a href="phuongThucThanhToan.html">Phương thức thanh toán</a></li>
+            <li><a href="donViVanChuyen.html">Đơn vị vận chuyển</a></li> <!-- Thêm mục mới vào sidebar -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Quản lý Đơn Hàng</h1>
+        </header>
+
+        <!-- Danh sách đơn hàng -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã đơn hàng</th>
+                    <th>Mã người dùng</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày tạo</th>
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu đơn hàng sẽ được hiển thị ở đây -->
+                <tr>
+                    <td><a href="chiTietDonHang.html?ma_don_hang=DH001">DH001</a></td>
+                    <td>NG001</td>
+                    <td>1000000</td>
+                    <td>Chờ xác nhận</td>
+                    <td>2025-04-01 10:00</td>
+                    <td><button class="view-btn" onclick="viewDetails('DH001')">Xem chi tiết</button></td>
+                </tr>
+                <tr>
+                    <td><a href="chiTietDonHang.html?ma_don_hang=DH002">DH002</a></td>
+                    <td>NG002</td>
+                    <td>1500000</td>
+                    <td>Đang giao</td>
+                    <td>2025-03-29 15:00</td>
+                    <td><button class="view-btn" onclick="viewDetails('DH002')">Xem chi tiết</button></td>
+                </tr>
+                <!-- Các đơn hàng khác có thể thêm vào đây -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Mở chi tiết đơn hàng
+        function viewDetails(maDonHang) {
+            // Giả sử bạn sẽ điều hướng đến trang chi tiết đơn hàng với mã đơn hàng
+            window.location.href = 'chiTietDonHang.html?ma_don_hang=' + maDonHang;
+        }
+    </script>
+</body>
+</html>

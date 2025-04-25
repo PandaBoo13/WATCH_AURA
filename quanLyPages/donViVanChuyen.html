@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đơn Vị Vận Chuyển</title>
+    <link rel="stylesheet" href="/CSS/stylesQuanLy.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="../index.html">Trang chủ </a></li>
+            <li><a href="nguoiDung.html">Người dùng</a></li>
+            <li><a href="dongDongHo.html">Dòng đồng hồ</a></li>
+            <li><a href="dongHo.html">Đồng hồ</a></li>
+            <li><a href="sanPham.html">Sản phẩm</a></li>
+            <li><a href="donHang.html">Đơn hàng</a></li>  
+            <li><a href="maGiamGia.html">Mã giảm giá</a></li>
+            <li><a href="lichSuVanChuyen.html">Lịch sử vận chuyển</a></li> 
+            <li><a href="phuongThucThanhToan.html">Phương thức thanh toán</a></li>
+            <li><a href="donViVanChuyen.html">Đơn vị vận chuyển</a></li> <!-- Thêm mục mới vào sidebar -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Quản lý Đơn Vị Vận Chuyển</h1>
+            <button class="add-btn" onclick="openAddForm()">Thêm</button>
+        </header>
+
+        <!-- Danh sách đơn vị vận chuyển -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã đơn vị</th>
+                    <th>Tên đơn vị</th>
+                    <th>Mã vận đơn</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>DVVC001</td>
+                    <td>Giao Hàng Nhanh</td>
+                    <td>VD001</td>
+                    <td>
+                        <button class="edit-btn" onclick="openEditForm('DVVC001')">Sửa</button>
+                        <button class="delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <!-- Các đơn vị vận chuyển khác có thể thêm vào đây -->
+            </tbody>
+        </table>
+
+        <div class="add-form" id="addForm">
+            <h3>Thêm đơn vị vận chuyển </h3>
+            <input type="text" id="addMaDonVi" placeholder="Mã đơn vị" readonly>
+            <input type="text" id="addTenDonVi" placeholder="Tên đơn vị">
+            <input type="text" id="addMaVanDon" placeholder="Mã vận đơn">
+            <button class="save-btn">Thêm</button>
+            <button class="close-btn" onclick="closeAddForm()">Đóng</button>
+        </div>
+
+        <!-- Form chỉnh sửa đơn vị vận chuyển -->
+        <div class="edit-form" id="editForm">
+            <h3>Chỉnh sửa Đơn Vị Vận Chuyển</h3>
+            <input type="text" id="editMaDonVi" placeholder="Mã đơn vị" readonly>
+            <input type="text" id="editTenDonVi" placeholder="Tên đơn vị">
+            <input type="text" id="editMaVanDon" placeholder="Mã vận đơn">
+            <button class="save-btn">Lưu thay đổi</button>
+            <button class="close-btn" onclick="closeEditForm()">Đóng</button>
+        </div>
+    </div>
+
+    <script>
+        // Mở form chỉnh sửa đơn vị vận chuyển
+        function openEditForm(code) {
+            document.getElementById('editForm').style.display = 'block';
+            // Cập nhật các trường dữ liệu với mã đơn vị
+            document.getElementById('editMaDonVi').value = code;
+            document.getElementById('editTenDonVi').value = "Giao Hàng Nhanh"; // Cập nhật với tên thực tế
+            document.getElementById('editMaVanDon').value = "VD001"; // Cập nhật với mã vận đơn thực tế
+        }
+
+        function openAddForm() {
+            document.getElementById('addForm').style.display = 'block';
+        }
+        function closeAddForm() {
+            document.getElementById('addForm').style.display = 'none';
+        }
+
+        // Đóng form chỉnh sửa đơn vị vận chuyển
+        function closeEditForm() {
+            document.getElementById('editForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

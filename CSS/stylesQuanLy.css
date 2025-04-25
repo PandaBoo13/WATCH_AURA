@@ -1,0 +1,150 @@
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+    background-image: url('images/image1.jpg'); /* Đặt hình nền ban đầu */
+    background-size: cover; /* Đảm bảo hình nền phủ hết trang */
+    background-position: center; /* Đặt hình nền ở giữa */
+    transition: background-image 1s ease-in-out; 
+}
+
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    background: #34495e;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-btn:hover {
+    background: #2ecc71;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #34495e;
+    color: white;
+}
+
+.product-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/* Nút thao tác */
+.edit-btn, .delete-btn, .close-btn {
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    background: #f1c40f;
+}
+
+.edit-btn:hover {
+    background: #f39c12;
+}
+
+.delete-btn {
+    background: #e74c3c;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+.close-btn {
+    background: red;
+}
+
+/* Form chỉnh sửa & thêm */
+.edit-form, .add-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form input, .edit-form select, 
+.add-form input, .add-form select {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+

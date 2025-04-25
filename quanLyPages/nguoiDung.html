@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Người Dùng</title>
+    <link rel="stylesheet" href="/CSS/stylesQuanLy.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="../index.html">Trang chủ </a></li>
+            <li><a href="nguoiDung.html">Người dùng</a></li>
+            <li><a href="dongDongHo.html">Dòng đồng hồ</a></li>
+            <li><a href="dongHo.html">Đồng hồ</a></li>
+            <li><a href="sanPham.html">Sản phẩm</a></li>
+            <li><a href="donHang.html">Đơn hàng</a></li>  
+            <li><a href="maGiamGia.html">Mã giảm giá</a></li>
+            <li><a href="lichSuVanChuyen.html">Lịch sử vận chuyển</a></li> 
+            <li><a href="phuongThucThanhToan.html">Phương thức thanh toán</a></li>
+            <li><a href="donViVanChuyen.html">Đơn vị vận chuyển</a></li> <!-- Thêm mục mới vào sidebar -->
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Quản lý Người Dùng</h1>
+            <!-- <button class="add-btn" onclick="openAddForm()">Thêm Người Dùng</button> -->
+        </header>
+        
+        <!-- Danh sách người dùng -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã người dùng</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Email</th>
+                    <th>Họ và tên</th>
+                    <th>Số điện thoại</th>
+                    <th>Vai trò</th>
+                    <th>Ngày tạo</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ND001</td>
+                    <td>john_doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>John Doe</td>
+                    <td>0123456789</td>
+                    <td>Admin</td>
+                    <td>2025-04-01 10:00</td>
+                    <td>
+                        <button class="edit-btn" onclick="openEditForm('ND001')">Sửa</button>
+                        <button class="delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <!-- Các người dùng khác có thể thêm vào đây -->
+            </tbody>
+        </table>
+
+        <!-- Form thêm người dùng -->
+        <div class="add-form" id="addForm">
+            <h3>Thêm Người Dùng Mới</h3>
+            <input type="text" id="addUsername" placeholder="Tên đăng nhập">
+            <input type="email" id="addEmail" placeholder="Email">
+            <input type="password" id="addPassword" placeholder="Mật khẩu">
+            <input type="text" id="addFullName" placeholder="Họ và tên">
+            <input type="text" id="addPhone" placeholder="Số điện thoại">
+            <textarea id="addAddress" placeholder="Địa chỉ"></textarea>
+            <select id="addRole">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+            </select>
+            <button class="save-btn">Thêm</button>
+            <button class="close-btn" onclick="closeAddForm()">Đóng</button>
+        </div>
+
+        <!-- Form chỉnh sửa người dùng -->
+        <div class="edit-form" id="editForm">
+            <h3>Chỉnh sửa Người Dùng</h3>
+            <input type="text" id="editUsername" placeholder="Tên đăng nhập">
+            <input type="email" id="editEmail" placeholder="Email">
+            <input type="password" id="editPassword" placeholder="Mật khẩu">
+            <input type="text" id="editFullName" placeholder="Họ và tên">
+            <input type="text" id="editPhone" placeholder="Số điện thoại">
+            <textarea id="editAddress" placeholder="Địa chỉ"></textarea>
+            <select id="editRole">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+            </select>
+            <button class="save-btn">Lưu thay đổi</button>
+            <button class="close-btn" onclick="closeEditForm()">Đóng</button>
+        </div>
+    </div>
+
+    <script>
+        // Mở form thêm người dùng
+        function openAddForm() {
+            document.getElementById('addForm').style.display = 'block';
+        }
+
+        // Đóng form thêm người dùng
+        function closeAddForm() {
+            document.getElementById('addForm').style.display = 'none';
+        }
+
+        // Mở form chỉnh sửa người dùng
+        function openEditForm(code) {
+            // Giả sử bạn đã có sẵn thông tin người dùng để chỉnh sửa, bạn sẽ cập nhật vào các trường input.
+            document.getElementById('editForm').style.display = 'block';
+            // Cập nhật các trường dữ liệu với mã người dùng
+            document.getElementById('editUsername').value = code;
+            document.getElementById('editEmail').value = "john.doe@example.com"; // Cập nhật với email thực tế
+            document.getElementById('editFullName').value = "John Doe"; // Cập nhật với tên thực tế
+            document.getElementById('editPhone').value = "0123456789"; // Cập nhật với số điện thoại thực tế
+            document.getElementById('editAddress').value = "123 Main St"; // Cập nhật với địa chỉ thực tế
+            document.getElementById('editRole').value = "Admin"; // Cập nhật với vai trò thực tế
+        }
+
+        // Đóng form chỉnh sửa người dùng
+        function closeEditForm() {
+            document.getElementById('editForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
