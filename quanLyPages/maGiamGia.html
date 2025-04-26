@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Mã Giảm Giá</title>
+    <link rel="stylesheet" href="/CSS/stylesQuanLy.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="../index.html">Trang chủ </a></li>
+            <li><a href="nguoiDung.html">Người dùng</a></li>
+            <li><a href="dongDongHo.html">Dòng đồng hồ</a></li>
+            <li><a href="dongHo.html">Đồng hồ</a></li>
+            <li><a href="sanPham.html">Sản phẩm</a></li>
+            <li><a href="donHang.html">Đơn hàng</a></li>  
+            <li><a href="maGiamGia.html">Mã giảm giá</a></li>
+            <li><a href="lichSuVanChuyen.html">Lịch sử vận chuyển</a></li> 
+            <li><a href="phuongThucThanhToan.html">Phương thức thanh toán</a></li>
+            <li><a href="donViVanChuyen.html">Đơn vị vận chuyển</a></li> <!-- Thêm mục mới vào sidebar -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Quản lý Mã Giảm Giá</h1>
+            <button class="add-btn" onclick="openAddForm()">Thêm</button>
+        </header>
+        
+        <!-- Danh sách mã giảm giá -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã Giảm Giá</th>
+                    <th>Phần Trăm Giảm</th>
+                    <th>Ngày Bắt Đầu</th>
+                    <th>Ngày Hết Hạn</th>
+                    <th>Trạng Thái</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GG2025</td>
+                    <td>20%</td>
+                    <td>2025-04-01 00:00</td>
+                    <td>2025-04-30 23:59</td>
+                    <td>Hoạt động</td>
+                    <td>
+                        <button class="edit-btn" onclick="openEditForm('GG2025')">Sửa</button>
+                        <button class="delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <!-- Các mã giảm giá khác có thể thêm vào đây -->
+            </tbody>
+        </table>
+
+        <!-- Form thêm mã giảm giá -->
+        <div class="add-form" id="addForm">
+            <h3>Thêm Mã Giảm Giá Mới</h3>
+            <input type="text" id="addMaGiamGia" placeholder="Mã giảm giá">
+            <input type="number" id="addPhanTramGiam" placeholder="Phần trăm giảm" step="0.01" min="0" max="100">
+            <input type="datetime-local" id="addNgayBatDau">
+            <input type="datetime-local" id="addNgayHetHan">
+            <select id="addTrangThai">
+                <option value="Hoat_dong">Hoạt động</option>
+                <option value="Het_han">Hết hạn</option>
+                <option value="Da_dung">Đã dùng</option>
+            </select>
+            <button class="save-btn">Thêm</button>
+            <button class="close-btn" onclick="closeAddForm()">Đóng</button>
+        </div>
+
+        <!-- Form chỉnh sửa mã giảm giá -->
+        <div class="edit-form" id="editForm">
+            <h3>Chỉnh sửa Mã Giảm Giá</h3>
+            <input type="text" id="editMaGiamGia" placeholder="Mã giảm giá">
+            <input type="number" id="editPhanTramGiam" placeholder="Phần trăm giảm" step="0.01" min="0" max="100">
+            <input type="datetime-local" id="editNgayBatDau">
+            <input type="datetime-local" id="editNgayHetHan">
+            <select id="editTrangThai">
+                <option value="Hoat_dong">Hoạt động</option>
+                <option value="Het_han">Hết hạn</option>
+                <option value="Da_dung">Đã dùng</option>
+            </select>
+            <button class="save-btn">Lưu thay đổi</button>
+            <button class="close-btn" onclick="closeEditForm()">Đóng</button>
+        </div>
+    </div>
+
+    <script>
+        // Mở form thêm mã giảm giá
+        function openAddForm() {
+            document.getElementById('addForm').style.display = 'block';
+        }
+
+        // Đóng form thêm mã giảm giá
+        function closeAddForm() {
+            document.getElementById('addForm').style.display = 'none';
+        }
+
+        // Mở form chỉnh sửa mã giảm giá
+        function openEditForm(maGiamGia) {
+            // Giả sử bạn đã có sẵn thông tin mã giảm giá để chỉnh sửa, bạn sẽ cập nhật vào các trường input.
+            document.getElementById('editForm').style.display = 'block';
+            // Cập nhật các trường dữ liệu với mã giảm giá
+            document.getElementById('editMaGiamGia').value = maGiamGia;
+            document.getElementById('editPhanTramGiam').value = "20"; // Cập nhật phần trăm giảm thực tế
+            document.getElementById('editNgayBatDau').value = "2025-04-01T00:00"; // Cập nhật ngày bắt đầu
+            document.getElementById('editNgayHetHan').value = "2025-04-30T23:59"; // Cập nhật ngày hết hạn
+            document.getElementById('editTrangThai').value = "Hoat_dong"; // Cập nhật trạng thái thực tế
+        }
+
+        // Đóng form chỉnh sửa mã giảm giá
+        function closeEditForm() {
+            document.getElementById('editForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
+
+/* Định dạng cho Top Bar */
+.top-bar {
+  background: #777;
+  color: white;
+  padding: 20px 70px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar .brand-name {
+  font-weight: bold;
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-bar .cart {
+  position: absolute;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* Biểu tượng giỏ hàng */
+.top-bar .cart img {
+  width: 40px;
+  margin-left: 15px;
+}
+/* Làm đậm chữ cho phần tử đang được chọn */
+.menu li.active a {
+  font-weight: bold;
+}
+
+/* Biểu tượng số lượng sản phẩm */
+.cart-number {
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  border: 1px solid white;
+}
+
+/* Navbar */
+nav {
+  background: white;
+  padding: 10px 50px;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin-right: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-item:hover {
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-link {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.badge {
+  background-color: #e6f0ff;
+  color: #5372f0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  .product-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+.product-list {
+  display: flex;
+  justify-content: center;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
+  gap: 20px; /* Khoảng cách giữa các item */
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.card-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.card-button {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.card-button:hover {
+  background-color: #e65c00;
+}
+footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+  text-align: left;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+footer h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Để các phần tử tự động xuống dòng nếu không đủ không gian */
+}
+
+footer .footer-section {
+  width: 22%; /* Chiều rộng của mỗi phần thông tin */
+  margin-bottom: 20px; /* Khoảng cách giữa các phần */
+}
+
+footer .footer-section:nth-child(2) {
+  margin-left: 40px; /* Dịch phần "FACEBOOK – INSTA – ZALO" qua bên phải */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 5px;
+}
+
+footer ul li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer-section {
+    width: 48%; /* Điều chỉnh chiều rộng khi màn hình nhỏ */
+  }
+
+  footer .footer-container {
+    justify-content: center;
+  }
+
+  footer .footer-section:nth-child(2) {
+    margin-left: 0; /* Xóa khoảng cách khi màn hình nhỏ */
+  }
+}

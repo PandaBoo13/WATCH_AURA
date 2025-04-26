@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
+/* Định dạng cho Top Bar */
+.top-bar {
+  background: #777;
+  color: white;
+  padding: 40px 70px;
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Căn giữa thương hiệu */
+.top-bar .brand-name {
+  font-weight: bold;
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Căn chỉnh giỏ hàng */
+.top-bar .cart {
+  position: absolute;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* Biểu tượng giỏ hàng */
+.top-bar .cart img {
+  width: 40px;
+  margin-left: 15px;
+}
+/* Làm đậm chữ cho phần tử đang được chọn */
+.menu li.active a {
+  font-weight: bold;
+}
+
+/* Biểu tượng số lượng sản phẩm */
+.cart-number {
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  border: 1px solid white;
+}
+
+/* Navbar */
+nav {
+  background: white;
+  padding: 15px 50px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu li {
+  margin-right: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.menu .left-menu {
+  margin-right: auto;
+}
+.menu li {
+  text-align: center;
+}
+.menu li:last-child {
+  margin-right: 0;
+}
+/* Banner */
+.banner {
+  width: 100%;
+  background: #f1f1f1;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+  text-align: left;
+  color: black;
+}
+
+.banner-content h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.banner-content p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.banner-content button {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Swiper Section */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.card-wrapper {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.card-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.card-item {
+  position: relative;
+  width: 24%;
+}
+
+.card-link {
+  display: block;
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.card-link:hover {
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  width: 100%; /* Đảm bảo ảnh chiếm 100% chiều rộng của phần tử chứa */
+  height: 250px; /* Cố định chiều cao của ảnh (bạn có thể điều chỉnh theo ý muốn) */
+  object-fit: cover; /* Cắt ảnh theo tỷ lệ mà không làm biến dạng, sẽ cắt bớt phần không cần thiết */
+  border-radius: 10px;
+}
+
+.badge {
+  color: #5372f0;
+  padding: 5px 10px;
+  background-color: #dde4ff;
+  border-radius: 50px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.card-title {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.card-button {
+  background-color: #5372f0;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card-button:hover {
+  background-color: #444;
+}
+
+/* Swiper Controls */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #5372f0;
+}
+
+.swiper-pagination {
+  bottom: 10px;
+}
+footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+  text-align: left;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+footer h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Để các phần tử tự động xuống dòng nếu không đủ không gian */
+}
+
+footer .footer-section {
+  width: 22%; /* Chiều rộng của mỗi phần thông tin */
+  margin-bottom: 20px; /* Khoảng cách giữa các phần */
+}
+
+footer .footer-section:nth-child(2) {
+  margin-left: 40px; /* Dịch phần "FACEBOOK – INSTA – ZALO" qua bên phải */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 5px;
+}
+
+footer ul li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer-section {
+    width: 48%; /* Điều chỉnh chiều rộng khi màn hình nhỏ */
+  }
+
+  footer .footer-container {
+    justify-content: center;
+  }
+
+  footer .footer-section:nth-child(2) {
+    margin-left: 0; /* Xóa khoảng cách khi màn hình nhỏ */
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .card-item {
+    width: 48%;
+  }
+
+  .card-wrapper {
+    margin: 0 10px;
+  }
+
+  .banner-content {
+    left: 10%;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin: 5px 0;
+  }
+}

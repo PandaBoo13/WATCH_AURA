@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Lịch Sử Vận Chuyển</title>
+    <link rel="stylesheet" href="/CSS/stylesQuanLy.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="../index.html">Trang chủ </a></li>
+            <li><a href="nguoiDung.html">Người dùng</a></li>
+            <li><a href="dongDongHo.html">Dòng đồng hồ</a></li>
+            <li><a href="dongHo.html">Đồng hồ</a></li>
+            <li><a href="sanPham.html">Sản phẩm</a></li>
+            <li><a href="donHang.html">Đơn hàng</a></li>  
+            <li><a href="maGiamGia.html">Mã giảm giá</a></li>
+            <li><a href="lichSuVanChuyen.html">Lịch sử vận chuyển</a></li> 
+            <li><a href="phuongThucThanhToan.html">Phương thức thanh toán</a></li>
+            <li><a href="donViVanChuyen.html">Đơn vị vận chuyển</a></li> <!-- Thêm mục mới vào sidebar -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Quản lý Lịch Sử Vận Chuyển</h1>
+        </header>
+
+        <!-- Danh sách lịch sử vận chuyển -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã lịch sử</th>
+                    <th>Mã đơn hàng</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày cập nhật</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LSV001</td>
+                    <td>DH001</td>
+                    <td>Đang giao</td>
+                    <td>2025-04-01 12:30</td>
+                    <td>
+                        <button class="edit-btn" onclick="openEditForm('LSV001')">Sửa</button>
+                        <button class="delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <!-- Các lịch sử vận chuyển khác có thể thêm vào đây -->
+            </tbody>
+        </table>
+
+        <!-- Form chỉnh sửa lịch sử vận chuyển -->
+        <div class="edit-form" id="editForm">
+            <h3>Chỉnh sửa Lịch Sử Vận Chuyển</h3>
+            <input type="text" id="editMaLichSu" placeholder="Mã lịch sử" readonly>
+            <input type="text" id="editMaDonHang" placeholder="Mã đơn hàng">
+            <select id="editTrangThai">
+                <option value="Cho_xac_nhan">Chờ xác nhận</option>
+                <option value="Dang_xu_ly">Đang xử lý</option>
+                <option value="Dang_giao">Đang giao</option>
+                <option value="Da_giao">Đã giao</option>
+                <option value="Da_huy">Đã hủy</option>
+            </select>
+            <input type="datetime-local" id="editNgayCapNhat">
+            <button class="save-btn">Lưu thay đổi</button>
+            <button class="close-btn" onclick="closeEditForm()">Đóng</button>
+        </div>
+    </div>
+
+    <script>
+        // Mở form chỉnh sửa lịch sử vận chuyển
+        function openEditForm(code) {
+            // Giả sử bạn đã có sẵn thông tin lịch sử vận chuyển để chỉnh sửa, bạn sẽ cập nhật vào các trường input.
+            document.getElementById('editForm').style.display = 'block';
+            // Cập nhật các trường dữ liệu với mã lịch sử
+            document.getElementById('editMaLichSu').value = code;
+            document.getElementById('editMaDonHang').value = "DH001"; // Cập nhật với mã đơn hàng thực tế
+            document.getElementById('editTrangThai').value = "Dang_giao"; // Cập nhật với trạng thái thực tế
+            document.getElementById('editNgayCapNhat').value = "2025-04-01T12:30"; // Cập nhật với ngày giờ thực tế
+        }
+
+        // Đóng form chỉnh sửa lịch sử vận chuyển
+        function closeEditForm() {
+            document.getElementById('editForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

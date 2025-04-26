@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Phương Thức Thanh Toán</title>
+    <link rel="stylesheet" href="/CSS/stylesQuanLy.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="../index.html">Trang chủ </a></li>
+            <li><a href="nguoiDung.html">Người dùng</a></li>
+            <li><a href="dongDongHo.html">Dòng đồng hồ</a></li>
+            <li><a href="dongHo.html">Đồng hồ</a></li>
+            <li><a href="sanPham.html">Sản phẩm</a></li>
+            <li><a href="donHang.html">Đơn hàng</a></li>  
+            <li><a href="maGiamGia.html">Mã giảm giá</a></li>
+            <li><a href="lichSuVanChuyen.html">Lịch sử vận chuyển</a></li> 
+            <li><a href="phuongThucThanhToan.html">Phương thức thanh toán</a></li>
+            <li><a href="donViVanChuyen.html">Đơn vị vận chuyển</a></li> <!-- Thêm mục mới vào sidebar -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Quản lý Phương Thức Thanh Toán</h1>
+            <button class="add-btn" onclick="openAddForm()">Thêm</button>
+        </header>
+
+        <!-- Danh sách phương thức thanh toán -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã phương thức</th>
+                    <th>Tên phương thức</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PTT001</td>
+                    <td>Thẻ tín dụng</td>
+                    <td>
+                        <button class="edit-btn" onclick="openEditForm('PTT001')">Sửa</button>
+                        <button class="delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <!-- Các phương thức thanh toán khác có thể thêm vào đây -->
+            </tbody>
+        </table>
+
+        <div class="add-form" id="addForm">
+            <h3>Thêm phương thức thanh toán </h3>
+            <input type="text" id="addCode" placeholder="Mã phuơng thức">
+            <input type="text" id="addName" placeholder="Tên phương thức">
+            <button class="save-btn">Thêm</button>
+            <button class="close-btn" onclick="closeAddForm()">Đóng</button>
+        </div>
+        <!-- Form chỉnh sửa phương thức thanh toán -->
+        <div class="edit-form" id="editForm">
+            <h3>Chỉnh sửa Phương Thức Thanh Toán</h3>
+            <input type="text" id="editMaPhuongThuc" placeholder="Mã phương thức" readonly>
+            <input type="text" id="editTenPhuongThuc" placeholder="Tên phương thức">
+            <button class="save-btn">Lưu thay đổi</button>
+            <button class="close-btn" onclick="closeEditForm()">Đóng</button>
+        </div>
+    </div>
+
+    <script>
+        // Mở form chỉnh sửa phương thức thanh toán
+        function openEditForm(code) {
+            document.getElementById('editForm').style.display = 'block';
+            // Cập nhật các trường dữ liệu với mã phương thức
+            document.getElementById('editMaPhuongThuc').value = code;
+            document.getElementById('editTenPhuongThuc').value = "Thẻ tín dụng"; // Cập nhật với tên thực tế
+        }
+
+        function openAddForm() {
+            document.getElementById('addForm').style.display = 'block';
+        }
+        function closeAddForm() {
+            document.getElementById('addForm').style.display = 'none';
+        }
+        // Đóng form chỉnh sửa phương thức thanh toán
+        function closeEditForm() {
+            document.getElementById('editForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
